@@ -24,6 +24,10 @@ public class JumpPad extends SlabBlock {
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
         super.onEntityWalk(worldIn, pos, entityIn);
         System.out.println("Walked over jump pad");
+        entityIn.fallDistance = 0;
+        //1 is ~ 5 blocks
+        //3 is ~ 40 blocks
+        entityIn.addVelocity(0, 1, 0);
     }
 
     @Nullable
