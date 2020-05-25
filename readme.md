@@ -2,6 +2,7 @@
 
 gradlew genIntellijRuns
 
+/recipe give <player> *
 
 ![](./crafting.png)
 

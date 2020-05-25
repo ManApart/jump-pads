@@ -15,19 +15,21 @@ import net.minecraftforge.common.ToolType;
 import javax.annotation.Nullable;
 
 public class JumpPad extends SlabBlock {
+    private final Float velocity;
 
-    public JumpPad() {
+    public JumpPad(Float velocity) {
         super(Block.Properties.create(Material.IRON, MaterialColor.BLUE).hardnessAndResistance(4f).sound(SoundType.METAL));
+        this.velocity = velocity;
     }
 
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
         super.onEntityWalk(worldIn, pos, entityIn);
-        System.out.println("Walked over jump pad");
+        System.out.println("Walked over jump pad with " + velocity + " velocity");
         entityIn.fallDistance = 0;
         //1 is ~ 5 blocks
         //3 is ~ 40 blocks
-        entityIn.addVelocity(0, 1, 0);
+        entityIn.addVelocity(0, velocity, 0);
     }
 
     @Nullable
@@ -39,11 +41,6 @@ public class JumpPad extends SlabBlock {
     @Override
     public int getHarvestLevel(BlockState state) {
         return 2; //Harvest level of 2 means it requires iron or better to harvest
-    }
-
-    @Override
-    public ResourceLocation getLootTable() {
-        return super.getLootTable();
     }
 
 }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "pattern": [
+    " S ",
+    "BPB",
+    "WCW"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:slime_block"
+    },
+    "B": {
+      "item": "minecraft:blaze_rod"
+    },
+    "P": {
+      "item": "jumppads:jumppaditem"
+    },
+    "W": {
+      "item": "minecraft:comparator"
+    },
+    "C": {
+      "tag": "minecraft:wool"
+    }
+  },
+  "result": {
+    "item": "jumppads:jumppaditem_2",
+    "count": 1
+  }
+}
