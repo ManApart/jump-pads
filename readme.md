@@ -8,12 +8,15 @@ gradlew genIntellijRuns
 Craft increasingly powerful Jump Pads. The weakest pad throws you up about 5 blocks. The most powerful pad throws you about 40 blocks in the air. Note due to not creating any new art, the base Jump Pad looks the same as a sticky piston.
 
 Jump Pad
+
 ![](./CraftingJumpPad.PNG)
 
 Slimy Jump Pad
+
 ![](./CraftingJumpPadSlimy.PNG)
 
 Explosive Jump Pad
+
 ![](./CraftingJumpPadExplosive.PNG)
 
 
