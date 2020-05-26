@@ -1,8 +1,11 @@
 {
-  "parent": "block/slab",
+  "parent": "block/cube",
   "textures": {
-    "top": "minecraft:block/slime_block",
-    "side": "minecraft:block/piston_side",
-    "bottom": "minecraft:block/piston_bottom"
+    "up": "minecraft:block/slime_block",
+    "down": "minecraft:block/piston_bottom",
+    "north": "minecraft:block/piston_side",
+    "east": "minecraft:block/piston_side",
+    "south": "minecraft:block/piston_side",
+    "west": "minecraft:block/piston_side"
   }
 }
