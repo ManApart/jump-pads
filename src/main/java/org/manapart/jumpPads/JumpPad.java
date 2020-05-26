@@ -7,7 +7,6 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
@@ -25,8 +24,10 @@ public class JumpPad extends SlabBlock {
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
         super.onEntityWalk(worldIn, pos, entityIn);
-        entityIn.fallDistance = 0;
-        entityIn.addVelocity(0, velocity, 0);
+        if (!entityIn.isCrouching()) {
+            entityIn.fallDistance = 0;
+            entityIn.addVelocity(0, velocity, 0);
+        }
     }
 
     @Nullable
