@@ -4,7 +4,17 @@ gradlew genIntellijRuns
 
 /recipe give <player> *
 
-![](./crafting.png)
+
+Craft increasingly powerful Jump Pads. The weakest pad throws you up about 5 blocks. The most powerful pad throws you about 40 blocks in the air. Note due to not creating any new art, the base Jump Pad looks the same as a sticky piston.
+
+Jump Pad
+![](./craftingJumpPad.png)
+
+Slimy Jump Pad
+![](./craftingJumpPadSlimy.png)
+
+Explosive Jump Pad
+![](./craftingJumpPadExplosive.png)
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/EvcFZttuX1c/0.jpg)](https://www.youtube.com/watch?v=EvcFZttuX1c)
 
