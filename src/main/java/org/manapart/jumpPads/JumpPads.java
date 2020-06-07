@@ -18,13 +18,13 @@ public class JumpPads {
     static final String MODID = "jumppads";
     static Item jumpPadsIcon = createIcon();
 
-    private static final JumpPad JUMP_PAD = createBlock(1f, "jumppad");
+    private static final JumpPad JUMP_PAD = createBlock(1.5f, "jumppad");
     private static final JumpPadItem JUMP_PAD_ITEM = createItem(JUMP_PAD, "jumppaditem");
 
-    private static final JumpPad JUMP_PAD_2 = createBlock(2f, "jumppad_2");
+    private static final JumpPad JUMP_PAD_2 = createBlock(3f, "jumppad_2");
     private static final JumpPadItem JUMP_PAD_ITEM_2 = createItem(JUMP_PAD_2, "jumppaditem_2");
 
-    private static final JumpPad JUMP_PAD_3 = createBlock(3f, "jumppad_3");
+    private static final JumpPad JUMP_PAD_3 = createBlock(4f, "jumppad_3");
     private static final JumpPadItem JUMP_PAD_ITEM_3 = createItem(JUMP_PAD_3, "jumppaditem_3");
 
     public JumpPads() {
