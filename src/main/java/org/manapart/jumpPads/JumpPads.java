@@ -35,8 +35,8 @@ public class JumpPads {
 
     @SubscribeEvent
     public void registerBlocks(RegistryEvent.Register<Block> event) {
-        System.out.println("Registering blocks");
         if (!ForgeRegistries.BLOCKS.containsKey(JUMP_PAD.getRegistryName())) {
+//            System.out.println("Registering blocks");
             ForgeRegistries.BLOCKS.register(JUMP_PAD);
             ForgeRegistries.BLOCKS.register(JUMP_PAD_2);
             ForgeRegistries.BLOCKS.register(JUMP_PAD_3);
@@ -45,8 +45,8 @@ public class JumpPads {
 
     @SubscribeEvent
     public void registerItems(RegistryEvent.Register<Item> event) {
-        System.out.println("Registering items");
         if (!ForgeRegistries.ITEMS.containsKey(JUMP_PAD_ITEM.getRegistryName())) {
+//            System.out.println("Registering items");
             ForgeRegistries.ITEMS.register(jumpPadsIcon);
             ForgeRegistries.ITEMS.register(JUMP_PAD_ITEM);
             ForgeRegistries.ITEMS.register(JUMP_PAD_ITEM_2);
