@@ -24,7 +24,9 @@ public class JumpPad extends SlimeBlock {
         entityIn.fallDistance = 0;
         super.onEntityWalk(worldIn, pos, entityIn);
         if (!entityIn.isCrouching() && isInMiddleOfBlock(pos, entityIn)) {
-            entityIn.setVelocity(0, velocity, 0);
+            if (worldIn.isRemote) {
+                entityIn.setVelocity(0, velocity, 0);
+            }
         }
     }
 
@@ -49,7 +51,7 @@ public class JumpPad extends SlimeBlock {
         return 2; //Harvest level of 2 means it requires iron or better to harvest
     }
 
-    private boolean isInMiddleOfBlock(BlockPos block, Entity entity){
+    private boolean isInMiddleOfBlock(BlockPos block, Entity entity) {
         double x = Math.abs(block.getX() - entity.getPosX());
         double z = Math.abs(block.getZ() - entity.getPosZ());
 
