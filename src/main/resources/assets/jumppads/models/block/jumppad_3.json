@@ -6,6 +6,7 @@
     "north": "minecraft:block/piston_side",
     "east": "minecraft:block/piston_side",
     "south": "minecraft:block/piston_side",
-    "west": "minecraft:block/piston_side"
+    "west": "minecraft:block/piston_side",
+    "particle": "minecraft:block/tnt_top"
   }
 }

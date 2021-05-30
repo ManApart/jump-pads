@@ -24,7 +24,7 @@ public class JumpPad extends SlimeBlock {
         Material padMat = new Material.Builder(MaterialColor.COLOR_GREEN).build();
         AbstractBlock.Properties props = AbstractBlock.Properties.of(padMat);
         props.sound(SoundType.SLIME_BLOCK);
-        props.harvestLevel(4);
+        props.strength(4);
         return props;
     }
 
