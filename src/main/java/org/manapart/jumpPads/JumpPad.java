@@ -15,28 +15,32 @@ public class JumpPad extends SlimeBlock {
     private final Float velocity;
 
     JumpPad(Float velocity) {
-        super(Block.Properties.create(Material.ORGANIC, MaterialColor.GREEN).hardnessAndResistance(4f).sound(SoundType.SLIME));
+        super(getProps());
+//        super(Block.Properties.create(Material.CORAL, MaterialColor.COLOR_GREEN).hardnessAndResistance(4f).sound(SoundType.SLIME_BLOCK));
         this.velocity = velocity;
     }
 
+    private static AbstractBlock.Properties getProps() {
+        Material padMat = new Material.Builder(MaterialColor.COLOR_GREEN).build();
+        AbstractBlock.Properties props = AbstractBlock.Properties.of(padMat);
+        props.sound(SoundType.SLIME_BLOCK);
+        props.harvestLevel(4);
+        return props;
+    }
+
     @Override
-    public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
+    public void stepOn(World worldIn, BlockPos pos, Entity entityIn) {
         entityIn.fallDistance = 0;
-        super.onEntityWalk(worldIn, pos, entityIn);
+        super.stepOn(worldIn, pos, entityIn);
         if (!entityIn.isCrouching() && isInMiddleOfBlock(pos, entityIn)) {
-            if (worldIn.isRemote) {
-                entityIn.setVelocity(0, velocity, 0);
+            if (worldIn.isClientSide) {
+                entityIn.setDeltaMovement(0, velocity, 0);
             }
         }
     }
 
     @Override
-    public void onFallenUpon(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
-        entityIn.fallDistance = 0;
-    }
-
-    @Override
-    public void onLanded(IBlockReader worldIn, Entity entityIn) {
+    public void fallOn(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
         entityIn.fallDistance = 0;
     }
 
@@ -52,10 +56,11 @@ public class JumpPad extends SlimeBlock {
     }
 
     private boolean isInMiddleOfBlock(BlockPos block, Entity entity) {
-        double x = Math.abs(block.getX() - entity.getPosX());
-        double z = Math.abs(block.getZ() - entity.getPosZ());
+        double x = Math.abs(block.getX() - entity.getX());
+        double z = Math.abs(block.getZ() - entity.getZ());
 
         return x > .2d && x < .8d && z > .2d && z < .8d;
     }
 
 }
+
