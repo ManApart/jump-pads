@@ -5,7 +5,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
@@ -15,14 +14,15 @@ public class JumpPad extends SlimeBlock {
     private final Float velocity;
 
     JumpPad(Float velocity) {
-        super(getProps());
-//        super(Block.Properties.create(Material.CORAL, MaterialColor.COLOR_GREEN).hardnessAndResistance(4f).sound(SoundType.SLIME_BLOCK));
+        super(createProps());
         this.velocity = velocity;
     }
 
-    private static AbstractBlock.Properties getProps() {
+    private static AbstractBlock.Properties createProps() {
         Material padMat = new Material.Builder(MaterialColor.COLOR_GREEN).build();
         AbstractBlock.Properties props = AbstractBlock.Properties.of(padMat);
+        props.requiresCorrectToolForDrops();
+        props.harvestTool(ToolType.PICKAXE);
         props.sound(SoundType.SLIME_BLOCK);
         props.strength(4);
         return props;
@@ -42,17 +42,6 @@ public class JumpPad extends SlimeBlock {
     @Override
     public void fallOn(World worldIn, BlockPos pos, Entity entityIn, float fallDistance) {
         entityIn.fallDistance = 0;
-    }
-
-    @Nullable
-    @Override
-    public ToolType getHarvestTool(BlockState state) {
-        return ToolType.PICKAXE;
-    }
-
-    @Override
-    public int getHarvestLevel(BlockState state) {
-        return 2; //Harvest level of 2 means it requires iron or better to harvest
     }
 
     private boolean isInMiddleOfBlock(BlockPos block, Entity entity) {
