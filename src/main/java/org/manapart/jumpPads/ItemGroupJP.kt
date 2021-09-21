@@ -21,9 +21,7 @@ import net.minecraftforge.event.RegistryEvent.Register
 import net.minecraftforge.registries.ForgeRegistries
 
 class ItemGroupJP private constructor(index: Int, label: String) : ItemGroup(index, label) {
-    override fun makeIcon(): ItemStack {
-        return ItemStack(JumpPads.Companion.jumpPadsIcon)
-    }
+    override fun makeIcon(): ItemStack = ItemStack(JumpPads.jumpPadsIcon)
 
     companion object {
         val instance = ItemGroupJP(getGroupCountSafe(), "jumppads")
