@@ -15,17 +15,13 @@ import kotlin.math.abs
 private fun createProps(): BlockBehaviour.Properties {
     val padMat = Material.Builder(MaterialColor.COLOR_GREEN).build()
     val props = BlockBehaviour.Properties.of(padMat)
-//    props.requiresCorrectToolForDrops()
-//    props.harvestTool(ToolType.PICKAXE)
+    props.requiresCorrectToolForDrops()
     props.sound(SoundType.SLIME_BLOCK)
     props.strength(4f)
     return props
 }
 
 class JumpPad internal constructor(private val velocity: Float) : SlimeBlock(createProps()) {
-//    init {
-//        tags.add(ResourceLocation("minecraft:mineable/pickaxe"))
-//    }
 
     override fun stepOn(worldIn: Level, pos: BlockPos, state: BlockState, entityIn: Entity) {
         entityIn.fallDistance = 0f
