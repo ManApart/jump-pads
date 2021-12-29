@@ -2,7 +2,6 @@ package org.manapart.jumpPads
 
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
-import thedarkcolour.kotlinforforge.forge.KDeferredRegister
 import thedarkcolour.kotlinforforge.forge.registerObject
 
 object ModBlocks {
