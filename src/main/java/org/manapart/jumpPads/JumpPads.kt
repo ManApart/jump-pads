@@ -1,7 +1,6 @@
 package org.manapart.jumpPads
 
-import net.minecraft.item.Item
-import net.minecraftforge.common.MinecraftForge
+import net.minecraft.world.item.Item
 import net.minecraftforge.fml.common.Mod
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
