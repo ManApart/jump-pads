@@ -1,6 +1,7 @@
 package org.manapart.jumpPads
 
 import net.minecraft.core.BlockPos
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.SlimeBlock
@@ -22,6 +23,10 @@ private fun createProps(): BlockBehaviour.Properties {
 }
 
 class JumpPad internal constructor(private val velocity: Float) : SlimeBlock(createProps()) {
+//    init {
+//        tags.add(ResourceLocation("minecraft:mineable/pickaxe"))
+//    }
+
     override fun stepOn(worldIn: Level, pos: BlockPos, state: BlockState, entityIn: Entity) {
         entityIn.fallDistance = 0f
         super.stepOn(worldIn, pos, state, entityIn)
