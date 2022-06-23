@@ -7,11 +7,11 @@ import thedarkcolour.kotlinforforge.forge.MOD_BUS
 const val MODID = "jumppads"
 @Mod(MODID)
 object JumpPads {
-
     init {
         ModBlocks.REGISTRY.register(MOD_BUS)
         ModItems.REGISTRY.register(MOD_BUS)
     }
 
-    val jumpPadsIcon = Item(Item.Properties()).also { it.setRegistryName("$MODID:jp_icon") }
+    val icon by lazy { Item(Item.Properties()) }
+
 }
