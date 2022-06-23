@@ -1,6 +1,5 @@
 package org.manapart.jumpPads
 
-import net.minecraft.world.item.Item
 import net.minecraftforge.fml.common.Mod
 import thedarkcolour.kotlinforforge.forge.MOD_BUS
 
@@ -11,7 +10,5 @@ object JumpPads {
         ModBlocks.REGISTRY.register(MOD_BUS)
         ModItems.REGISTRY.register(MOD_BUS)
     }
-
-    val icon by lazy { Item(Item.Properties()) }
 
 }
